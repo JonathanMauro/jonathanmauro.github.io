@@ -57,7 +57,7 @@
     margin-bottom: 20px;
 }
 
-#bio-container #welcome-text {
+#bio-container #welcome-text, #about-container title{
     font-weight: bold;
 }
 
