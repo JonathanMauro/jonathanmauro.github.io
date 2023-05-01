@@ -275,8 +275,8 @@ const form = document.getElementById('myForm');
         message: form.message.value
       })
     }).then(() => {
-      alert('Mensagem enviada com sucesso!');
+      alert('Error, favor entrar em contto pelo whatsapp informado ao lado!');
     }).catch(() => {
-      alert('Ocorreu um erro ao enviar a mensagem.');
+      alert('Error, favor entrar em contto pelo whatsapp informado ao lado!');
     });
   });
