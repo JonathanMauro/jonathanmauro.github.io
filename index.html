@@ -327,8 +327,8 @@
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/flappy-bird-logo.png" class="img-fluid" alt="FlappyBird">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/flappybird_fundo.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title=""><i class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/flappybird_fundo.png" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/JonathanMauro/Flappy_Bird" title="Flappy_Bird - HTML,CSS,JAVASCRIPT"><i
                     class="bx bx-link"></i></a>
               </div>
@@ -339,8 +339,8 @@
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/Fundotrans.jpg" class="img-fluid" alt="Cronometro">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/FundoCronometro.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Website com Cronometro"><i class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/FundoCronometro.png" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Website com Cronometro"><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/JonathanMauro/cronometro" title="Cronometro - HTML,CSS,JAVASCRIPT"><i
                     class="bx bx-link"></i></a>
               </div>
@@ -469,40 +469,49 @@
                 <p>(32) 98442-7931</p>
               </div>
 
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6646920.497992499!2d-55.620358327663155!3d-27.490558689054208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x989c43e1f85da1%3A0x6236b026b3a0a468!2sJuiz%20de%20Fora%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1682604205978!5m2!1spt-BR!2sbr"
-                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118602.30443031823!2d-43.46492234709807!3d-21.729038421913156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x989c43e1f85da1%3A0x6236b026b3a0a468!2sJuiz%20de%20Fora%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1683398311894!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form" id="myForm">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Seu nome</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Email para contato</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Assunto</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Mensagem</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
-              </div>
-              <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
+          
+            <form action="https://postmail.invotes.com/send" method="post" id="email_form" class="php-email-form">
+              <p>Mande o seu E-mail</p>
+
+              <input type="text" class="form-control" name="subject" placeholder="Assunto" required/>
+               <input type="text" class="form-control" name="extra_Email"
+            placeholder="Email" required/> 
+            <input type="text" class="form-control" name="extra_Assunto"
+            placeholder="Nome" required/> 
+            <!-- <input type="text" name="extra_phone_number"
+            placeholder="Phone Number" /> -->
+              <textarea name="text" class="form-control" placeholder="Mensagem"></textarea>
+              <input type="hidden" name="access_token" value="ne1rexngledegyw3y76ye08o" />
+              <!-- return urls can be fully qualified -OR-
+     start with / for root relative -OR-
+     start with . for url relative -->
+              <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+              <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+
+
+              <!-- set the reply-to address -->
+              <!-- <input type="text" name="reply_to"
+            placeholder="Your Email" /> -->
+
+              <!-- to append extra fields, use the extra_ prefix.
+    Entries will be appended to your message body. -->
+              <!-- <input type="text" name="extra_phone_number"
+            placeholder="Phone Number" /> -->
+
+              <!-- to split your message into 160 chars
+     for an sms gateway -->
+              <!-- <input type="hidden"
+            name="sms_format" value="true" /> -->
+
+              <input id="submit_form" type="submit" value="Enviar" />
+              <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site -->
+              <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
             </form>
           </div>
 
@@ -538,6 +547,17 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    let submitButton = document.getElementById("submit_form");
+    let form = document.getElementById("email_form");
+    form.addEventListener("submit", function (e) {
+      setTimeout(function () {
+        submitButton.value = "Enviando...";
+        submitButton.disabled = true;
+      }, 1);
+    });
+  </script>
+
 
 </body>
 

@@ -256,27 +256,13 @@
 })()
 
 
-/*Forms auto message*/ 
+  //Form
 
-const form = document.getElementById('myForm');
-  const url = 'https://formspree.io/f/mjvpjbva';
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value
-      })
-    }).then(() => {
-      alert('Error, favor entrar em contto pelo whatsapp informado ao lado!');
-    }).catch(() => {
-      alert('Error, favor entrar em contto pelo whatsapp informado ao lado!');
+    let submitButton = document.getElementById("submit_form");
+    let form = document.getElementById("email_form");
+    form.addEventListener("submit", function (e) {
+      setTimeout(function () {
+        submitButton.value = "Enviando...";
+        submitButton.disabled = true;
+      }, 1);
     });
-  });
