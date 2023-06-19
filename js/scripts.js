@@ -23,7 +23,7 @@ sectionLinks.forEach(link => {
 
 
 //EFEITO DE APARECE E SUMIR FUNÇÕES NO BANNER
-funcoes = ['Desenvolvedor Web Fullstack', 'Data Science','Estudante de Engenharia de Software']
+funcoes = ['Desenvolvedor Web Fullstack', 'Freelancer', 'Data Science']
 
 document.addEventListener('DOMContentLoaded', function () {
 	let typed = new Typed('.typed', {
@@ -84,44 +84,8 @@ $(document).ready(function() {
 
 
 //portifolio click
-$(document).ready(function() {
-	$('.portfolio-wrap').hover(
-	  function() {
-		$(this).find('.portfolio-links').addClass('show');
-	  },
-	  function() {
-		$(this).find('.portfolio-links').removeClass('show');
-	  }
-	);
-  });
   
-  
-// Aguarde o carregamento completo da página
-document.addEventListener("DOMContentLoaded", function() {
-	// Obtenha todas as imagens com a classe "portfolio-img-container"
-	const portfolioImages = document.querySelectorAll(".portfolio-img-container");
-  
-	// Adicione um evento de mouseover para cada imagem
-	portfolioImages.forEach(function(image) {
-	  // Obtenha os links da imagem
-	  const links = image.querySelector(".portfolio-links");
-  
-	  // Adicione um evento de mouseover à imagem
-	  image.addEventListener("mouseover", function() {
-		// Exiba os links ao passar o mouse sobre a imagem
-		links.style.opacity = 1;
-		links.style.visibility = "visible";
-	  });
-  
-	  // Adicione um evento de mouseout à imagem
-	  image.addEventListener("mouseout", function() {
-		// Oculte os links ao remover o mouse da imagem
-		links.style.opacity = 0;
-		links.style.visibility = "hidden";
-	  });
-	});
-  });
-  
+
 
 
 
@@ -175,5 +139,25 @@ window.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 });
+
+
+//controle de rolagem de pagina
+
+// Obtém todas as âncoras dentro do menu
+let links = document.querySelectorAll('.menu a');
+
+// Adiciona um evento de clique a cada âncora
+links.forEach(function(link) {
+  link.addEventListener('click', function() {
+    // Remove a classe "active" de todos os ícones
+    links.forEach(function(link) {
+      link.querySelector('i').classList.remove('active');
+    });
+    
+    // Adiciona a classe "active" ao ícone correspondente ao link clicado
+    this.querySelector('i').classList.add('active');
+  });
+});
+
 
 

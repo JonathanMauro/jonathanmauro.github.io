@@ -23,6 +23,7 @@ body {
 
 #header {
     position: fixed;
+    display: flex;
     top: 0;
     left: 0;
     bottom: 0;
@@ -100,13 +101,12 @@ body {
     display: none;
 }
 
+.menu .bi .active {
+    color: var(--azul-claro); /* Cor da seção ativa */
+  }
 
+  
 /*Responsividade do menu*/
-@media (max-width: 1024) {
-    #header{display: none;}
-}
-
-
 @media (max-width: 768px) {
     body {
         overflow-x: hidden;
@@ -128,6 +128,7 @@ body {
 
 
 #home {
+    display: flex;
     width: 400;
     height: 100vh;
     background: url("../img/teclado-iphone.jpg") top center;
@@ -187,9 +188,6 @@ body {
 
 }
 
-
-
-
 @media (max-width: 768px) {
     #home {
         width: 100%;
@@ -223,9 +221,13 @@ body {
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
-#sobre {
-    margin-left: 120px;
+section {
+    display: flex;
+    padding: 60px 0;
+    overflow: hidden;
+    margin-left: 250px;
 }
+
 .section-bg {
     background: var(--branco);
 }
@@ -258,7 +260,6 @@ body {
     margin-bottom: 0;
 }
 
-
 @media (max-width: 768px) {
     section {
         padding: 60px 0;
@@ -271,7 +272,9 @@ body {
   # About
   --------------------------------------------------------------*/
 
-
+#sobre {
+    display: flex;
+}
 
 .sobre .content h3 {
     font-weight: 700;
@@ -305,6 +308,11 @@ body {
     margin-bottom: 0;
 }
 
+@media (max-width: 768px){
+    .row{
+        margin-left: -20px;
+    }
+}
 
 /*ANIMAÇÃO NO SOBRE*/
 .fade-right {
@@ -328,6 +336,7 @@ body {
     opacity: 1;
     transform: translateX(0);
 }
+
 
 /*--------------------------------------------------------------
 # Skills
@@ -487,20 +496,47 @@ body {
     z-index: 1;
 }
 
-.portfolio-wrap:hover {
+.portfolio-wrap::before {
     content: "";
     background: rgba(255, 255, 255, 0.5);
-   
+    position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     transition: all ease-in-out 0.3s;
     z-index: 2;
-    opacity: 0.5;
+    opacity: 0;
 }
 
- 
+.portfolio .portfolio-wrap .portfolio-links {
+    opacity: 1;
+    left: 0;
+    right: 0;
+    bottom: -60px;
+    z-index: 3;
+    position: absolute;
+    transition: all ease-in-out 0.3s;
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+    color: var(--branco);
+    font-size: 28px;
+    text-align: center;
+    background: rgba(20, 157, 221, 0.75);
+    transition: 0.3s;
+    width: 50%;
+}
+
+.portfolio-links a:hover {
+    background: rgba(20, 157, 221, 0.95);
+}
+
+.portfolio-links a+a {
+    border-left: 1px solid var(--azul-claro);
+}
 
 .portfolio-wrap:hover::before {
     top: 0;
@@ -577,6 +613,13 @@ body {
     padding: 0;
   }
 
+  .portfolio-links i {
+    visibility: hidden;
+  }
+  
+  .portfolio-links.show i {
+    visibility: visible;
+  }
 /**/
 /*--------------------------------------------------------------
 # Contact
@@ -789,6 +832,7 @@ body {
     color: #888;
     /* Cor do texto do placeholder */
 }
+
 @media(max-width:768px) {
     .contact {
         margin-left: 10px;
@@ -832,11 +876,11 @@ body {
     .breadcrumbs .d-flex {
         display: block !important;
     }
-    
+
     .breadcrumbs ol {
         display: block;
     }
-    
+
     .breadcrumbs ol li {
         display: inline-block;
     }
@@ -845,7 +889,7 @@ body {
 /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
-  #footer {
+#footer {
     padding: 15px;
     color: #f4f6fd;
     font-size: 14px;
@@ -874,7 +918,4 @@ body {
         width: auto;
         padding-right: 20px 15px;
     }
-}
-@media (max-width: 1024px) {
-    #footer{display: none;}
 }
