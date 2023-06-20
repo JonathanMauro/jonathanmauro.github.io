@@ -23,6 +23,7 @@ body {
 
 #header {
     position: fixed;
+    flex-direction: row;
     display: flex;
     top: 0;
     left: 0;
@@ -129,6 +130,7 @@ body {
 
 #home {
     display: flex;
+    flex: 1;
     width: 400;
     height: 100vh;
     background: url("../img/teclado-iphone.jpg") top center;
