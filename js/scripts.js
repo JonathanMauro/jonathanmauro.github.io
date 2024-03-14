@@ -22,7 +22,7 @@ sectionLinks.forEach(link => {
 });
 
 
-//EFEITO DE APARECE E SUMIR FUNÇÕES NO BANNER
+//EFEITO DE APARECE E SUMIR NOME NO BANNER
 funcoes = ['Desenvolvedor Web Fullstack', 'Freelancer', 'Data Science']
 
 document.addEventListener('DOMContentLoaded', function () {
